@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Coding</title>
+</head>
+<body>
+    <script>
+        //1.WAP for add the all values of array elements
+       //  let arr = [51,2,3,4,5,6,9,8];
+        // let sum = 0;
+        // for(let x of arr){
+        //     sum+=x;
+        // }
+        // console.log(sum);
+
+        //2. WAP for add the all value of odd position
+        //  for(let x in arr){
+        //     if(x%2!=0){
+        //         sum+=arr[x];
+        //     }
+        //  }
+        //  console.log(sum);
+
+        //3. WAP for addition of all odd no.
+        // for(let x in arr){
+        //     if(arr[x]%2!=0){
+        //         sum+=arr[x];
+        //     }
+        // }
+
+        //4. WAP for addition of all even no.
+        // for(let x in arr){
+        //     if(arr[x]%2==0){
+        //         sum+=arr[x];
+        //     }
+        // }
+        // console.log(sum);
+
+        //5.take input from user:4, in the return i want index value if its not there then print value is not found.
+        // let n = +prompt("Enter the number");
+        // flag = false;
+        // let i;
+        // for(i=0;i<arr.length;i++){
+        //     if(arr[i]==n){
+        //         flag = true;
+        //         break;
+        //     }
+        // }
+        // if(flag==true){
+        //     console.log(arr[i]);
+        // }
+        // else{
+        //     console.log("Value is not found.")
+        // }
+
+        //add all the value their data type is no.
+        let arr = [1,2,5,9,'utsav',true,{}];
+        let sum=0;
+        for(let x in arr){
+            if(typeof arr[x]== 'number'){
+                sum+=arr[x];
+            }
+        }
+        console.log(sum);
+    </script>
+</body>
+</html>

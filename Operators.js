@@ -1,0 +1,11 @@
+console.log(2+2);
+console.log(5-4);
+console.log(3*4*6);
+console.log(80/10);
+console.log(4 > 5);
+console.log(9<11);
+console.log(10 == 9);
+console.log(10 != 9);
+console.log(3 > 5 && 6>3);
+console.log(3<8 || 9>8);
+console.log(!true);

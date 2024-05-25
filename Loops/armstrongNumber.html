@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number</title>
+</head>
+<body>
+    <script>
+        let num = +prompt("Enter number");
+        let temp = num;
+        let temp1 = temp;
+        let sum = 0;
+        let length = 0;
+        while(num>0){
+            length++;
+            num = Math.trunc(num/10);
+        }
+        while(temp>0){
+            let rem = temp%10;
+            sum = sum + (rem**length);
+            temp = Math.trunc(temp/10);
+        }
+        if(sum == temp1){
+            console.log("Armstrong");
+        }
+        else{
+            console.log("Non armstrong");
+        }
+    </script>
+</body>
+</html>

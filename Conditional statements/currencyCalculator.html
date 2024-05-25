@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Calculator</title>
+</head>
+<body>
+    <script>
+        var currency = Number(prompt("Enter the amount"));
+        var result = null;
+        if(currency >= 2000){
+            result = Math.trunc(currency/2000);
+            console.log("No. of 2000 notes:", result);
+            currency = currency - (2000 * result);
+        }
+        if(currency >= 1000){
+            result = Math.trunc(currency/1000);
+            console.log("No. of 1000 notes:", result);
+            currency = currency - (1000 * result);
+        }
+        if(currency >= 500){
+            result = Math.trunc(currency/500);
+            console.log("No. of 500 notes:", result);
+            currency = currency - (500 * result);
+        }
+        if(currency >= 100){
+            result = Math.trunc(currency/100);
+            console.log("No. of 100 notes:", result);
+            currency = currency - (100 * result);
+        }
+        if(currency >= 50){
+            result = Math.trunc(currency/50);
+            console.log("No. of 50 notes:", result);
+            currency = currency - (50 * result);
+        }
+        if(currency >= 20){
+            result = Math.trunc(currency/20);
+            console.log("No. of 20 notes:", result);
+            currency = currency - (20 * result);
+        }
+        if(currency >= 10){
+            result = Math.trunc(currency/10);
+            console.log("No. of 10 notes:", result);
+            currency = currency - (10 * result);
+        }
+    </script>
+</body>
+</html>

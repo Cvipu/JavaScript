@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Number</title>
+</head>
+<body>
+    <script>
+        let sum = 0;
+        let num = +prompt("Enter number");
+        let temp = num;
+        while(num>0){
+            let rem = num%10;
+            let fact = 1;
+            for(let i=2;i<=rem;i++){
+                fact *= i;
+            }
+            sum += fact;
+            num = Math.trunc(num/10);
+        }
+        if(sum == temp){
+            console.log("Strong number");
+        }
+        else{
+            console.log("Not a strong number.");
+        }
+    </script>
+</body>
+</html>

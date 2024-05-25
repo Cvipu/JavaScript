@@ -1,0 +1,11 @@
+Arithmetic Operators
+1.Addition(+) 2.Sunstraction(-) 3.Multiplication(*) 4.Division(/)
+
+Logical Operators
+1.Greater than (>)
+2.Less than (<)
+3.Equal to equal to (==)
+4.Not equal to (!=)
+5.&& - checks for both conditions to be true
+6.|| - checks for atleast one condition to be true.
+7.! - returns false if the result is true.

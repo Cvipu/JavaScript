@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number or not</title>
+</head>
+<body>
+    <script>
+        var num = Number(prompt("Enter number"));
+        var flag = false;
+        if(num == 1 || num == 2){
+            console.log("Prime");
+        }
+        else{
+        for(let i=2;i<num;i++){
+            if(num%i==0){
+                flag = true;
+                break;
+            }
+        }}
+        if(flag == true){
+            console.log("Not prime");
+        }
+        else{
+            console.log("Prime");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Generator</title>
+</head>
+<body>
+    <script>
+        var bill = Number(prompt("What is your bill?"));
+        if(bill <= 1000){
+            console.log("Congratulations! No need to pay bill");
+        }
+        else if(bill >= 1010 && bill <= 1050){
+            console.log("Please pay Rs. ",1000*2/100);
+        }
+        else if(bill > 1050 && bill <= 1080){
+            console.log("Please pay Rs. ",1000*4/100);
+        }
+        else if(bill > 1080 && bill <= 1100){
+            console.log("Please pay Rs. ",1000*8/100);
+        }
+        else{
+            console.log("Please pay Rs. ",1000*20/100);
+        }
+    </script>
+</body>
+</html>

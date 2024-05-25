@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <script>
+        function calculator(){
+        let opr = +prompt("1(Addition),2(Substraction),3(Multiplication),(Exit)");
+        let num1;
+        let num2;
+        switch(opr){
+            case 1:
+                 num1 = +prompt("Enter 1st number");
+                 num2 = +prompt("Enter 2nd number");
+                console.log("Addition of ",num1," and ",num2," is: ",num1+num2);
+                break;
+            case 2:
+                 num1 = +prompt("Enter 1st number");
+                 num2 = +prompt("Enter 2nd number");
+                 console.log("Substraction of ",num1," and ",num2," is: ",num1-num2);
+                 break;
+            case 3:
+                num1 = +prompt("Enter 1st number");
+                num2 = +prompt("Enter 2nd number");
+                console.log("Multiplication of ",num1," and ",num2," is: ",num1*num2);
+                break;
+            default:
+                console.log("Exit");
+                break;
+        }
+    }
+    calculator();
+
+    </script>
+</body>
+</html>
