@@ -2,8 +2,8 @@
 let arr=[
     {name:'utsav',sal:1000,age:25,add:'delhi'},
     {name:'vicky',sal:1500,age:23,add:'odisha'},
-    {name:'d',sal:850,age:24,add:'delhi'},
-    {name:'c',sal:700,age:27,add:'nepal'},
+    {name:'d',sal:7000,age:24,add:'delhi'},
+    {name:'c',sal:5000,age:27,add:'nepal'},
     {name:'utsav',sal:2000,age:30,add:'jaipur'},
     {name:'utx',sal:3000,age:35,add:'jaipur'}
 ]
@@ -12,12 +12,15 @@ let arr=[
 // }
 
 //Q2-------------print emp name whose sal is maximum
-// let max = 0;
-// for(let i=0;i<arr.length;i++){
-//     if(max < arr[i].sal){
-//         max = arr[i].sal;
-//     }    
-// }
+let large = 0;
+
+for(let i=0;i<arr.length;i++){
+    if(large < arr[i].sal){
+        //max = arr[i].sal;
+    } 
+    console.log( Math.maxlarge,arr[i].sal)   
+}
+
 // for(let j=0;j<arr.length;j++){
 //     if(max == arr[j].sal){
 //         console.log(arr[j].name);
@@ -101,22 +104,22 @@ let arr=[
 
 
 //Q11-------------------- print all emp details sort into ascending order a/c to their sal
-let arr1=[];
-for(let i=0;i<arr.length;i++){
-  arr1.push(arr[i].sal);
-}
-arr1.sort((a,b)=>{
-    return a-b;
-})
-//console.log(arr1);
-let arr2=[]
-for(let j=0;j<arr1.length;j++){
-    for(let k=0;k<arr.length;k++){
-        if(arr[k].sal==arr1[j]){
-             arr2.push(arr[k]);
-        }
-    }
-}
-console.log(arr2);
+// let arr1=[];
+// for(let i=0;i<arr.length;i++){
+//   arr1.push(arr[i].sal);
+// }
+// arr1.sort((a,b)=>{
+//     return a-b;
+// })
+// //console.log(arr1);
+// let arr2=[]
+// for(let j=0;j<arr1.length;j++){
+//     for(let k=0;k<arr.length;k++){
+//         if(arr[k].sal==arr1[j]){
+//              arr2.push(arr[k]);
+//         }
+//     }
+// }
+// console.log(arr2);
 
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="head" id="id1">This is line 1</h1>
+        <h1 class="head" id="id2">This is line 2</h1>
+        <h1 class="head" id="id3">This is line 3</h1>
+        <h1 class="head" id="id4">This is line 4</h1>
+        <p>Hi, How are you!!</p>
+    </div>
+    <div id="main">
+        <h1 class="had" id="iden1">JavaScript1</h1>
+        <h1 class="had" id="iden2">JavaSript2</h1>
+        <h1 class="had" id="iden3">JavaSript3</h1>
+        <h1 class="had" id="iden4">JavaSript4</h1>
+    </div>
+    <script>
+        //group selector
+        let result = document.getElementsByClassName('head');
+        for(let i of result)i.style.color = 'red';
+        let result1 = document.getElementsByTagName('body');
+        //console.log(result1);
+        for(let j of result1)j.style.backgroundColor = 'blue';
+        let res = '';
+        // res = document.querySelectorAll('.head');
+        // console.log(res);
+       // res = document.querySelectorAll('p');
+        //console.log(res);
+        // res = document.querySelectorAll('.main>h1');
+        // console.log(res);
+        //Traversing in DOM
+        //parentNode and parentElement
+        // let java = document.getElementById('iden4');
+        // console.log(java.parentNode);
+        // console.log(java.parentElement);
+
+        //childNodes/children
+         //let a = document.getElementsByClassName('container');
+        // console.log(a.children);
+        //console.log(a[0].childElementCount);
+       // console.log(a[0].nodeName);
+       //nodeType
+       //console.log(a[0].nodeType);
+       //console.log(a[0].childNodes[3].nodeType);
+       //firstChild and firstElementChild
+       //let b = document.getElementById('main').firstElementChild
+       //console.log(b);
+       //let c = document.getElementById('main').lastElementChild;
+       //console.log(c);
+       let d=document.getElementById('iden2').previousElementSibling;
+       console.log(d);
+    </script>
+</body>
+</html>
