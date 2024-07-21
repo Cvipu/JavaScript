@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+</head>
+<body>
+    <div id="container">
+        <h4 id="head1"></h4>
+        <h4 id="head2"></h4>
+        <h4 id="head3"></h4>
+    </div>
+    <script>
+        let container = document.getElementById('container');
+    let amount = prompt("enter amount")
+    let head1 = document.getElementById('head1')
+    head1.innerText=`Current balance is : ${amount}`
+    let choice = prompt("enter choice");
+    if(choice == 1){
+        let credit =prompt(`enter credit amount`);
+        let head2 = document.getElementById('head2')
+        head2.innerText=`credit amount is :${credit}`
+        let total = amount + credit;
+        let head3 = document.getElementById('head3')
+        head3.innerText=`total balance is: ${total}`
+    }
+    if(choice == 2){
+        let debit =prompt("enter debit amount");
+        let head2 = document.getElementById('head2')
+        head2.innerText=`debit amount is :${debit}`
+        let total = amount - debit;
+        let head3 = document.getElementById('head3')
+        head3.innerText=`total balance is: ${total}`
+    }
+    </script>
+</body>
+</html>

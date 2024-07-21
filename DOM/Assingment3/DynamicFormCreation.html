@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Creation</title>
+</head>
+<style>
+     #container{
+        display: flex;
+     }
+</style>
+<body>
+    <div id="container">
+       <select name="" id="format">
+        <option value="" id="iden1">Text</option>
+        <option value="" id="iden2">Email</option>
+        <option value="" id="iden3">Password</option>
+        <option value="" id="iden4">Textarea</option>
+        <option value="" id="iden5">Number</option>
+       </select>
+       <input type="text" placeholder="Enter placeholder" id="input">
+       <button id="submit">Submit</button>
+    </div>
+    <div id="body">
+
+    </div>
+    <script>
+        let submit = document.getElementById('submit');
+        let body = document.getElementById('body');
+        submit.addEventListener('click',()=>{
+            let box = document.createElement('div');
+            body.append(box);
+            box.innerText = input.value;
+            let inputbox = document.createElement('input');
+            let del = document.createElement('button');
+            box.append(inputbox);
+            box.append(del);
+            inputbox.setAttribute('placeholder',input.value);
+            del.innerText = 'Delete';
+            del.style.backgroundColor = 'red';
+            del.addEventListener('click',()=>{
+                box.innerText = '';
+            })
+        })
+    </script>
+</body>
+</html>

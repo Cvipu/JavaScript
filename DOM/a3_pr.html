@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+<script>
+    let container = document.getElementById('container');
+        let input = document.createElement('input');
+        let button = document.createElement('button')
+        button.innerText="unique text"
+        container.append(input,button)
+
+        input.style.height="200px"
+        input.style.width="200px"
+
+        button.addEventListener('click',()=>{
+                input.value=`lorem${Math.trunc(Math.random()*10)}`
+
+        })
+</script>
+</body>
+</html>

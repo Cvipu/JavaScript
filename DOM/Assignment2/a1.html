@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    <label for="">Name</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Enter name" id="name">
+                    <button>Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="i1"></div>
+    <div id="i2"></div>
+    <div id="i3"></div>
+    <script>
+        let form = document.querySelector('form')
+        let btn = document.querySelector('button')
+        let divs = document.querySelectorAll('div')
+        let name = document.getElementById('name')
+        let first = document.getElementById('i1')
+        let middle = document.getElementById('i2')
+        let last = document.getElementById('i3')
+        for (let div of divs) {
+            div.style.border = '1px black solid'
+            div.style.height = '20px'
+            div.style.width = '170px'
+            div.style.marginTop = '10px'
+        }
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            if (!name.value) {
+                let a = alert('Name field should be filled')
+                name.style.border = '3px red solid'
+            } else {
+                let count1 = `${ name.value }`;
+                first.textContent = count1;
+                if (first.textContent = count1) {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault()
+                        if (!name.value) {
+                            let b = alert('Name field should be filled')
+                            a = ''
+                            name.style.border = '3px red solid'
+                        } else {
+                            first.textContent = count1
+                            let count2 = `${ name.value }`;
+                            middle.textContent = count2
+                            if (middle.textContent = count2) {
+                                btn.addEventListener('click', (e) => {
+                                    e.preventDefault()
+                                    if (!name.value) {
+                                        let c = alert('Name field should be filled')
+                                        a = ''
+                                        b = ''
+                                        name.style.border = '3px red solid'
+                                    } else {
+                                        first.textContent = count1
+                                        middle.textContent = count2
+                                        let count3 = `${ name.value }`;
+                                        last.textContent = count3
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+            }
+        })      
+    </script>
+</body>
+
+</html>

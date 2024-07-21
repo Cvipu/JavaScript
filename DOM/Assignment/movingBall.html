@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving ball</title>
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/css/all.css">
+    <style>
+        #container{
+            margin: 100px 0px 0px 600px;
+        }
+        #b0{
+            
+            margin: 150px 0px 0px 640px;
+        }
+        #b1{
+            position: relative;
+            top: 100px;
+            right: 25px;
+        }
+        #b2{
+            position: relative;
+            top: 50px;
+            right: 100px;
+        }
+        #b3{
+            position: relative;
+            top: 50px;
+            right: 34px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let container = document.getElementById('container');
+        container.style.height = '100px';
+        container.style.width = '100px';
+        container.style.backgroundColor = 'brown';
+        container.style.borderRadius = '50%';
+        let body = document.querySelector('body');
+        for(let i=0;i<4;i++){
+            let button = document.createElement('button');
+            body.append(button);
+            button.setAttribute('id',`b${i}`);
+            if(i==0)button.innerHTML= '<i class="fa-solid fa-up-long"></i>';
+            else if(i==1)button.innerHTML= '<i class="fa-solid fa-arrow-down"></i>';
+            else if(i==2)button.innerHTML= '<i class="fa-solid fa-left-long"></i>';
+            else button.innerHTML= '<i class="fa-solid fa-right-long"></i>';
+        }
+        let b0 = document.getElementById('b0');
+        let b1 = document.getElementById('b1');
+        let b2 = document.getElementById('b2');
+        let b3 = document.getElementById('b3');
+        container.style.position = 'relative';
+        b0.addEventListener('click',()=>{
+            container.style.translate = '0px -100px';
+        });
+        b1.addEventListener('click',()=>{
+            container.style.translate = '0px 100px';
+        });
+        b2.addEventListener('click',()=>{
+            container.style.translate = '-100px 0px';
+        });
+        b3.addEventListener('click',()=>{
+            container.style.translate = '100px 0px';
+        });
+    </script>
+</body>
+</html>

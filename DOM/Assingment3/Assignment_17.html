@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - 17</title>
+    <style>
+        #head {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        #body {
+            display: grid;
+            grid-template-columns: 34% 34% 32%;
+        }
+
+        #main {
+            display: grid;
+            grid-template-columns: 34% 34% 32%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="head">
+            <input type="text" id="input">
+            <button id="add">Add</button>
+        </div>
+    </div>
+    <div id="body">
+        <h1>Start</h1>
+        <h1>In Progress</h1>
+        <h1>Completed</h1>
+    </div>
+    <hr>
+    <div id="main">
+        <div id="start"></div>
+        <div id="progress"></div>
+        <div id="completed"></div>
+    </div>
+    <script>
+        let add = document.getElementById('add');
+        let start = document.getElementById('start');
+        let progress = document.getElementById('progress');
+        let completed = document.getElementById('completed');
+        let flag = 0;
+        add.addEventListener('click', () => {
+            if (!input.value) {
+                alert('Please enter name')
+            }
+            else {
+                let div = document.createElement('div')
+                let button1 = document.createElement('button');
+                start.append(div)
+                div.append(button1);
+                button1.innerText = '<'
+                let span = document.createElement('span');
+                div.append(span);
+                span.innerText = input.value;
+                let button2 = document.createElement('button');
+                div.append(button2);
+                button2.innerText = '>';
+                if (flag == 0) {
+                    button1.disabled = true;
+                }
+                button2.addEventListener('click', () => {
+                    let div1 = document.createElement('div')
+                    let button3 = document.createElement('button');
+                    progress.append(div1);
+                    div1.append(button3);
+                    button3.innerText = '<'
+                    let span1 = document.createElement('span');
+                    div1.append(span1);
+                    span1.innerText = input.value;
+                    let button4 = document.createElement('button');
+                    div1.append(button4);
+                    button4.innerText = '>';
+                    div.style.display = 'none'
+                    flag = 1;
+                })
+                if (flag == 1) {
+                    button4.addEventListener('click', () => {
+                        let div2 = document.createElement('div')
+                        let button5 = document.createElement('button');
+                        completed.append(div2);
+                        div2.append(button5);
+                        button5.innerText = '<';
+                        let span2 = document.createElement('span');
+                        div2.append(span2);
+                        span2.innerText = input.value;
+                        let button6 = document.createElement('button');
+                        div2.append(button6);
+                        button6.innerText = '>';
+                        flag = 2;
+                    })
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

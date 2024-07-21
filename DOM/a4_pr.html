@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" name="" id="input">
+        <button id="btn1">Increment</button>
+        <button id="btn2">Decrement</button>
+    </div>
+    <script>
+        let container = document.getElementById('container');
+        let input = document.getElementById('input');
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn2');
+
+        let count = +prompt('Enter number');
+        input.value=count;
+        function test(){
+            input.value=count;
+            if(count === 1){
+                btn2.disabled=true;
+            }
+            else{
+                btn2.disabled=false;
+            }
+        }
+        btn1.addEventListener('click',()=>{
+            count++;    
+            test();
+        })
+        btn2.addEventListener('click',()=>{
+            count--;
+            test();
+            
+        })
+    </script>
+</body>
+</html>

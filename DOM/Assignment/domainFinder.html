@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Finder</title>
+</head>
+<body>
+    <h1 id="head">Domain Finder</h1>
+    <div id="container"></div>
+    <script>
+        let domain = ['utsav','vipul','vicky','subham'];
+        let container = document.getElementById('container');
+         let input = prompt("Enter your username");
+        let flag = false;
+        for(let i=0;i<domain.length;i++){
+            if(input == domain[i]){
+                container.innerText = 'Username not available';
+                flag = true;
+                break;
+            }
+        }
+        if(flag == false){
+            container.innerText = 'Valid Username';
+            domain.push(input);
+        }
+    </script>
+</body>
+</html>

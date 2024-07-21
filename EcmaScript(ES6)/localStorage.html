@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <script>
+        let name = 'utsav';
+        //To save data in localStorage
+        localStorage.setItem('Details',name);
+        localStorage.setItem('age',25);
+        localStorage.setItem('add','delhi');
+        //have to read the data
+        localStorage.getItem('Details');
+        //To update the data
+        localStorage.setItem('Details','vicky');
+        //To delete specific data
+        localStorage.removeItem('Details');
+        //To delete all data or clear localStorage
+        localStorage.clear();
+        //example for local storage
+        let obj = {
+            name: 'utsav',
+            age: 25,
+            add: 'Delhi'
+        };
+        localStorage.setItem('details',JSON.stringify(obj));
+        // console.log(localStorage.getItem('details'));
+        let data = JSON.stringify(obj);
+        let res = JSON.parse(data);
+        console.log(data)// output will be in string format
+        console.log(res)//output will be in it's original format
+        console.log(localStorage.key(1));
+    </script>
+</body>
+</html>

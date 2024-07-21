@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">hello i am  mouse event</h1>
+    <!-- <button onclick="greetingHandler()" id="btn">click</button> -->
+    <button id="btn">Click here</button>
+<script>
+    let head = document.getElementById('head');
+    function greetingHandler(){
+           head.style.backgroundColor = 'pink';
+           head.style.border = '2px solid red';
+           head.style.color = 'blue';
+           head.style.borderRadius = '20%';
+           head.style.textAlign = 'center';
+    }
+    let btn = document.getElementById('btn');
+   // btn.addEventListener('click',greetingHandler);
+   btn.onclick = greetingHandler;
+
+
+</script>
+</body>
+</html>

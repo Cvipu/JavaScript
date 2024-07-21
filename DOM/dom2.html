@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="tab"></table>
+    <script>
+        let dataset = [
+            {name:'Football',url1:'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D',url2:'https://en.wikipedia.org/wiki/Football'},
+            {name:'Cricket',url1:'https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcC0zNDktZmVsaXhydXNzZWxsNTI3OS14Mi5qcGc.jpg',url2:'https://en.wikipedia.org/wiki/Cricket'},
+            {name:'Volleyball',url1:'https://i.pinimg.com/originals/46/4d/0c/464d0cdadcfae34b8e37fd5a780fdf35.jpg',url2:'https://en.wikipedia.org/wiki/Volleyball'},
+            {name:'Hockey',url1:'https://thumbs.dreamstime.com/b/female-playing-field-hockey-front-view-isolated-illustration-athlete-silhouette-form-121329487.jpg',url2:'https://en.wikipedia.org/wiki/Hockey'},
+            {name:'Badminton',url1:'https://i.pinimg.com/736x/1d/09/b6/1d09b6860160e069e35f256a09a15f6d.jpg',url2:'https://en.wikipedia.org/wiki/Badminton'}
+        ]
+        let table = document.getElementById('tab');
+        let row;
+        let data;
+        let anchor;
+        let image;
+        let j;
+        // function hover(){
+        //     data.innerText = `${dataset[j].name}`;
+        // }
+        for(let i=1;i<=2;i++){
+            row = document.createElement('tr');
+            table.append(row);
+            for(j=0;j<=4;j++){
+                data = document.createElement('td');
+                row.append(data);
+                if(i==1){
+                    data.innerText = `${dataset[j].name}`;
+                    data.style.border = "2px solid violet";
+                    data.style.backgroundColor = "pink";
+                }
+                else{
+                    anchor = document.createElement('a');
+                    data.append(anchor);
+                    data.style.border = "2px solid violet";
+                    image = document.createElement('img');
+                    anchor.append(image);
+                    anchor.setAttribute("href",`${dataset[j].url2}`);
+                    image.setAttribute("src",`${dataset[j].url1}`);
+                    image.setAttribute("height","100px");
+                    image.setAttribute("width","100px");
+                    image.setAttribute("alt","Image not found");
+                    image.setAttribute("title",`${dataset[j].name}`);
+                    //image.setAttribute("onmouseover",`function(){this.innerText = ${dataset[j].name};}`) 
+                }
+            }
+        }
+        console.log(table);
+    </script>
+</body>
+
+</html>

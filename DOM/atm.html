@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="head1"></h1>
+        <h1 id="head2"></h1>
+        <h1 id="head3"></h1>
+    </div>
+    <script>
+        let amount = +prompt("Previous Balance");
+        let choice = +prompt("Press 1 for credit and 2 for debit");
+        let Total_balance;
+        let head1 = document.getElementById('head1');
+        let head2 = document.getElementById('head2');
+        let head3 = document.getElementById('head3');
+        if (choice == 1) {
+            let credit = +prompt("Enter amount to be credited!");
+            head1.innerText = `Previous balance: ${amount}`;
+            head2.innerText = `Amount credited: ${credit}`;
+            head3.innerText = `Total balance: ${amount + credit}`;
+        }
+        if (choice == 2) {
+            let debit = +prompt("Enter amount to be debited!");
+            if (debit > amount) {
+                head1.innerText = `Insufficient balance: ${amount}`;
+            }
+            else {
+                head1.innerText = `Previous balance: ${amount}`;
+                head2.innerText = `Amount debited: ${debit}`;
+                head3.innerText = `Total balance: ${amount - debit}`;
+            }
+        }
+    </script>
+</body>
+</html>

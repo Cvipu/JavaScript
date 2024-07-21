@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Game</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let container = document.getElementById('container');
+        let random = 50;
+        let input = +prompt("Enter number");
+        let count = 1;
+        window.addEventListener('load',()=>{count++;})
+        while(count<=3){
+            switch(count){
+                case 1:
+                    if(input == random){
+                        container.innerText = 'Pass, Excellent';
+                        count+=4;
+                        break;
+                    }
+                    else{
+                        count++;
+                        container.innerText = 'Sorry, Try again';
+                    }
+                case 2:
+                    if(input == random){
+                        container.innerText = 'Pass, Average';
+                        count+=4;
+                        break;
+                    }
+                    else{
+                        count++;
+                        container.innerText = 'Sorry, try again last time!';
+                    }
+                case 3:
+                    if(input == random){
+                        container.innerText = 'Pass';
+                        count+=4;
+                        break;
+                    }
+                    else{
+                        count++;
+                        container.innerText = 'Not able to guess';
+                    }
+            }
+        }
+    </script>
+</body>
+</html>

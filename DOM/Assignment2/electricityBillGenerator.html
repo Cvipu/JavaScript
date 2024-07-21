@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Generator</title>
+</head>
+<body>
+    <h1>Electricity Bill Generator</h1>
+    <form action="" id="form">
+        <label for="">Unit Consumption</label>
+        <input type="number" id="unit"><br><br>
+        <label for="">Category</label>
+        <select name="" id="category">
+            <option value="General">General</option>
+            <option value="OBC">OBC</option>
+            <option value="SC/ST">SC/ST</option>
+        </select><br><br>
+        <label for="">NAME</label>
+        <input type="text" id="name"><br><br>
+        <button id="submit">Submit</button>
+    </form>
+    <div id="container"></div>
+    <script>
+        let category = document.getElementById('category');
+        let submit = document.getElementById('submit');
+        let container = document.getElementById('container');
+        let unit = document.getElementById('unit');
+        let name = document.getElementById('name');
+        submit.addEventListener('click',(e)=>{
+            e.preventDefault();
+            if(category.value == 'General'){
+                if(unit.value<100){
+                    container.innerHTML = `<h1>${name.value}! Your bill amount is : 0 Rs.</h1>`;
+                }
+                else if(unit.value>=100 && unit.value<300){
+                    container.innerHTML = `<h1>${name.value}! Your bill amount is : ${(unit.value - 100)*8} Rs.</h1>`;
+                }
+                else{
+                    container.innerHTML = `<h1>${name.value}! Your bill amount is : ${(unit.value - 100)*15} Rs.</h1>`;
+                    }
+            }
+            if(category.value == 'OBC'){
+                if(unit.value<200){
+                    container.innerHTML = `<h1>${name.value}! Your bill amount is : 0 Rs.</h1>`;
+                }
+                else if(unit.value>=200 && unit.value<400){
+                    container.innerHTML = `<h1>${name.value}! Your bill amount is : ${(unit.value - 200)*8} Rs.</h1>`;
+                }
+                else{
+                    container.innerHTML = `<h1>${name.value}! Your bill amount is : ${(unit.value - 200)*15} Rs.</h1>`;
+                    }
+            }
+            if(category.value == 'SC/ST'){
+                if(unit.value<500){
+                    container.innerHTML = `<h1>${name.value}! Your bill amount is : 0 Rs.</h1>`;
+                }
+                else{
+                    container.innerHTML = `<h1>${name.value}! Your bill amount is : ${(unit.value - 500)*3} Rs.</h1>`;
+                    }
+            }
+        })
+    </script>
+</body>
+</html>

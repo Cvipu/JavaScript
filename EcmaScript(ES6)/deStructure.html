@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructure practice</title>
+</head>
+<body>
+    <script>
+        // let obj = {
+        //     name:'utsav',
+        //     add:'delhi'
+        // }
+        //destructure
+        // let {name,add} = obj;
+        // console.log(name);//utsav
+        // console.log(add);//delhi
+        let details = {
+            name:'utsav',
+            add:{
+                pa:'delhi',
+                ca:{
+                    last6months:'spice garden',
+                    thismonthadd:{
+                        sevendayback:'kundan',
+                        present:'Mara'
+                    }
+                }
+            }
+        }
+        let {name,add:{pa,ca:{last6months,thismonthadd:{present}}}} = details;
+        console.log(last6months);
+
+        //in array
+        let arr = [4,5,6,7,8];
+        let [a,b,c,...x] = arr;
+        console.log(a);//4
+
+        //nested array
+        let arr2 = [3,4,5,6,[4,5,6,[6,7,9000]]];
+        let [,,,,[,,,[,,d]]] = arr2;
+        console.log(d);
+
+    </script>
+</body>
+</html>

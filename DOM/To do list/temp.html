@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <title>todo list bootstrap</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h1>Todo List</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex">
+                <input type="text" class="form-control" id="input" placeholder="Enter your text">
+                <input type="text" class="btn btn-primary" value="submit" id="submit">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <select name="" id="" class="form-select">
+                    <option value="">A-Z</option>
+                    <option value="">Z-A</option>
+                </select>
+            </div>
+            <div class="col">
+                <p>Total Count : <span id="count"></span></p>
+            </div>
+            <div class="col">
+                <input type="button" class="btn btn-danger" value="DeleteAll" id="deletAll">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <p></p>
+                        <input type="button" class="btn btn-primary" value="edit" id="edit">
+                        <input type="button" class="btn btn-danger" value="Delete" id="delete">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script>
+        let submit = document.getElementById('submit');
+        let input = document.getElementById('input');
+        submit.addEventListener('submit',()=>{
+            if(!input.value){
+                alert('Please enter text');
+            }
+            else{
+                let obj = {
+                    id: `${Math.trunc}`,
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

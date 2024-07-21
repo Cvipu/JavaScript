@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center mt-5 mb-2">
+            <div class="col">
+                <h1>Todo List</h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-5 d-flex">
+                <input type="text" name="" class="form-control me-2" placeholder="Enter Task" id="msg" />
+                <input type="button" value="Submit" id="submit" class="btn btn-primary">
+            </div>
+        </div>
+        <div class="row justify-content-md-evenly m-5">
+            <div class="col col-lg-3">
+                <select class="form-select" aria-label="default select example" id="">
+                    <option selected>open this to select</option>
+                    <option value="1" onclick="az()">A-Z</option>
+                    <option value="2">a-z</option>
+                </select>
+            </div>
+            <div class="col col-lg-3 text-center">
+                <label for="" class="form-label" id="">Total Count: <span id="count">0</span></label>
+            </div>
+            <div class="col col-lg-3">
+                <input type="button" value="Delete All" class="btn btn-danger" id="deleteAll">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col" id="card">
+                <!-- <div class="card" >
+                    <div class="card-body" id="card-body">
+                        <p id="text"></p>
+                        <input type="button" value="edit" class="btn btn-info">
+                        <input type="button" value="delete" class="btn btn-danger">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        let container = document.getElementById('container');
+        let msg = document.getElementById('msg');
+        let submit = document.getElementById('submit');
+        let globalArray = [];
+        let deleteAll = document.getElementById('deleteAll');
+        let count = document.getElementById('count')
+        submit.addEventListener('click', () => {
+            let obj = {
+                id: Math.trunc(Math.random() * 1000),
+                msg: `${msg.value}`
+            }
+            console.log(obj)
+            if (!obj.msg) {
+                alert('insert text');
+            }
+            else {
+                print();
+            }
+            count.innerText = globalArray.length;
+            msg.value = '';
+            globalArray.push(obj);
+            print(globalArray);
+        })
+        deleteAll.addEventListener('click', () => {
+            globalArray = [];
+            print(globalArray);
+            count.innerText = "";
+        })
+        function edit(id) {
+            let editText = globalArray.find(item => item.id === id);
+            if (editText) {
+                msg.value = editText.msg;
+                globalArray = globalArray.filter(item => item.id !== id);
+                print(globalArray);
+            }
+        }
+        function deleteText(id) {
+
+            globalArray = globalArray.filter(item => item.id !== id);
+            print(globalArray);
+            count.innerText = "";
+        }
+        function az() {
+            msg.sort();
+            console.log(msg)
+        }
+        function print() {
+            let card = document.getElementById('card');
+            let str = "";
+            globalArray.forEach((item) => {
+                str += `
+            <div class="card" >
+                    <div class="card-body" id="card-body">
+                        <p>${item.msg}</p>
+                        <input type="button" value="edit" id="edit"class="btn btn-info" onclick="edit(${item.id})">
+                        <input type="button" value="delete" class="btn btn-danger" onclick="deleteText(${item.id})">
+                    </div>
+                </div>
+            `
+            })
+            card.innerHTML = str;
+        }
+    </script>
+</body>

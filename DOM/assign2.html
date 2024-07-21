@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Check</title>
+    <style>
+        #container{
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let str = '1234';
+        let password = prompt('Enter password');
+        let container = document.getElementById('container');
+        container.style.height = '100px';
+        container.style.width = '200px';
+        container.style.textAlign = 'center';
+        if(password == str){
+            container.innerText = 'Congratulations! Your password matched';
+            container.style.backgroundColor = 'green';
+        }
+        else{
+            container.innerText = 'Invalid Password';
+            container.style.backgroundColor = 'red';
+        }
+
+    </script>
+</body>
+</html>

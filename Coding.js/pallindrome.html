@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pallindrome</title>
+</head>
+
+<body>
+    <h1>Pallindrome</h1>
+    <script>
+        let a = 16461;
+        let reverse = '';
+        while (a > 0) {
+            let rem = a % 10;
+            reverse += rem;
+            a = Math.trunc(a / 10);
+        }
+        console.log(Number(reverse),typeof Number(reverse));
+        if (a == Number(reverse)) {
+            console.log("pallindrome");
+        }
+        else {
+            console.log("Not a pallindrome number")
+        }
+    </script>
+</body>
+
+</html>

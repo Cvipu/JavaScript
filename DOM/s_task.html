@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="f1">
+        
+    </form>
+    <script>
+        let form = document.getElementById('f1');
+        let count = 2;
+        for(let i = 0;i<count;i++){
+             let x = prompt('enter text');
+             let y = prompt('enter placeholder');
+             let label = document.createElement('label');
+             form.append(label);
+             label.innerText = x;
+             let input = document.createElement('input');
+             form.append(input);
+             input.setAttribute('placeholder',y);
+        }
+        let button = createElement('button');
+        form.append(button);
+        button.innerText = 'Submit';
+    </script>
+</body>
+</html>

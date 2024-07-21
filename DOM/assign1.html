@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour</title>
+    <style>
+        #container {
+            margin: auto;
+        }
+
+        #b0 {
+            margin-left: 505px;
+            padding: 20px;
+        }
+
+        #b1 {
+            margin-left: 10px;
+            padding: 20px;
+        }
+
+        #b2 {
+            margin-left: 10px;
+            padding: 20px;
+        }
+
+        #b3 {
+            margin-left: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script>
+        let container = document.getElementById('container');
+        container.style.height = '200px';
+        container.style.width = '400px';
+        container.style.backgroundColor = 'grey';
+        let body = document.querySelector('body');
+        for (let i = 0; i <= 3; i++) {
+            let button = document.createElement('button');
+            body.append(button);
+            button.setAttribute('id', `b${i}`);
+            if (i == 0) {
+                button.innerText = 'Red';
+                button.style.backgroundColor = 'red';
+            }
+            else if (i == 1) {
+                button.innerText = 'Blue';
+                button.style.backgroundColor = 'blue';
+            }
+            else if (i == 2) {
+                button.innerText = 'Black';
+                button.style.backgroundColor = 'black';
+                button.style.color = 'white';
+            }
+            else {
+                button.innerText = 'Orange';
+                button.style.backgroundColor = 'orange';
+            }
+        }
+        document.getElementById('b0').addEventListener('click', () => { container.style.backgroundColor = 'red' });
+        document.getElementById('b1').addEventListener('click', () => { container.style.backgroundColor = 'blue' });
+        document.getElementById('b2').addEventListener('click', () => { container.style.backgroundColor = 'black' });
+        document.getElementById('b3').addEventListener('click', () => { container.style.backgroundColor = 'orange' });
+    </script>
+</body>
+
+</html>

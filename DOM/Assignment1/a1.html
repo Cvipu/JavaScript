@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <button id="sub">Submit</button>
+    <div id="container"></div>
+    <script>
+        let button = document.getElementById('sub');
+        //let c = document.getElementById('count');
+        let name = document.getElementById('name');
+        let container = document.getElementById('container');
+        // let count = 0;
+        button.addEventListener('click', (e) => {
+            //count++;
+            //let counter = document.createElement('span');
+            //c.append(counter);
+            //counter.innerText = `${count}`;
+            let head = document.createElement('h1');
+            container.append(head);
+            head.innerText = name.value;
+        })
+    </script>
+</body>
+</html>

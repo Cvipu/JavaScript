@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Text Generator</title>
+    <style>
+        #container{
+            margin: auto;
+        }
+        button{
+            margin-left: 590px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let container = document.getElementById('container');
+        let body = document.querySelector('body');
+        let btn = document.createElement('button');
+        body.append(btn);
+        btn.innerText = 'Random Text Generator';
+        container.style.height = '200px';
+        container.style.width = '200px';
+        container.style.backgroundColor = 'blue';
+        container.style.fontSize = '30px';
+        container.style.textAlign = 'center';
+        let count = 0;
+        btn.addEventListener('click', () => {
+            count++;
+            container.innerText = `lorem${Math.trunc(Math.random() * 10)}`
+            btn.innerText = 'Random Text Generator' + ' ' + count;
+            if (count <= 10) {
+                container.style.color = 'black';
+                container.style.backgroundColor = 'red';
+            }
+            else {
+                container.style.color = 'white';
+                container.style.backgroundColor = 'black';
+            }
+        });
+    </script>
+</body>
+
+</html>

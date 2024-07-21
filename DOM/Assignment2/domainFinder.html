@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Finder</title>
+</head>
+
+<body>
+    <h1>Domain Finder</h1>
+    <form action="">
+        <input type="text" id="name">
+        <button id="submit">Check</button>
+    </form>
+    <div id="container"></div>
+    <a href="" id="all">All User</a>
+    <div id="users"></div>
+    <script>
+        let user_available = ['Utsav', 'Vipul', 'Subham', 'Anju', 'Prakash'];
+        let name = document.getElementById('name');
+        let submit = document.getElementById('submit');
+        let container = document.getElementById('container');
+        let all = document.getElementById('all');
+        let users = document.getElementById('users');
+       // let count = 0;
+        submit.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(!name.value){
+                container.innerHTML = '<h1>Please enter username</h1>'
+            }
+            else if (user_available.includes(name.value) == true) {
+                container.innerHTML = '<h1>Username has already taken</h1>';
+            }
+            else {
+                container.innerHTML = '<h1>Username Accepted</h1>';
+                user_available.push(name.value);
+              //  count++;
+            }
+        })
+        all.addEventListener('click', (e) => {
+            e.preventDefault();
+            for (let i = 0; i < user_available.length; i++) {
+                let head = document.createElement('h2');
+                users.append(head);
+                head.innerText = `${user_available[i]}`;
+            }
+        })
+    </script>
+</body>
+
+</html>
